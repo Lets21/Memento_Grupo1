@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Memento_Grupo1.Models.BlogPost>
+
+<h2>Lista de Artículos de Blog</h2>
+
+<table class="table">
+    <tr>
+        <th>Título</th>
+        <th>Contenido</th>
+        <th>Acciones</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Content</td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.Id })">Editar</a>
+                <!-- Otros botones si los necesitas -->
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="@Url.Action("Create")">Crear Nuevo Artículo</a>
+<a href="@Url.Action("Undo")">Deshacer Último Cambio</a>

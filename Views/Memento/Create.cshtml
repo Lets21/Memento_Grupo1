@@ -1,0 +1,16 @@
+﻿@model Memento_Grupo1.Models.BlogPost
+
+<h2>Crear Artículo de Blog</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>Título</label>
+        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        <label>Contenido</label>
+        @Html.TextAreaFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}
